@@ -1,0 +1,37 @@
+{
+    "KujangSiaga1": {
+        "title": "Peringatan Dini Cuaca Ekstrem",
+        "peringatan": "2", 
+        "level": "2",
+        "berulang": "3",
+        "pegawai": "Testing_Ara",
+        "Pesan": "Waspada terhadap potensi cuaca ekstrem yang dapat terjadi dalam beberapa jam ke depan. Pastikan untuk mengikuti perkembangan informasi cuaca dan mengambil langkah-langkah pencegahan yang diperlukan.",
+        "Lokasi": "Jakarta Selatan"
+    },
+    "EditKujangSiaga1": {
+        "title": "Peringatan Dini Cuaca Ekstrem Edit",
+        "peringatan": "1", 
+        "level": "3",
+        "berulang": "2",
+        "pegawai": "Testing_Ibnu",
+        "Pesan": "Waspada terhadap potensi cuaca ekstrem yang dapat terjadi dalam beberapa jam ke depan. Pastikan untuk mengikuti perkembangan informasi cuaca dan mengambil langkah-langkah pencegahan yang diperlukan. (Edit)",
+        "Lokasi": "Jakarta Pusat"
+    },
+    "KujangSiaga2": {
+        "title": "Peringatan Dini Banjir",
+        "peringatan": "2",
+        "level": "1",
+        "pegawai": "Testing_Ara",
+        "Pesan": "Waspada terhadap potensi banjir yang dapat terjadi dalam beberapa jam ke depan. Pastikan untuk mengikuti perkembangan informasi cuaca dan mengambil langkah-langkah pencegahan yang diperlukan.",
+        "Lokasi": "Bandung"
+    },
+    "EditKujangSiaga2": {
+        "title": "Peringatan Dini Banjir Edit",
+        "peringatan": "1",
+        "level": "2",
+        "pegawai": "Testing_Ibnu",
+        "Pesan": "Waspada terhadap potensi banjir yang dapat terjadi dalam beberapa jam ke depan. Pastikan untuk mengikuti perkembangan informasi cuaca dan mengambil langkah-langkah pencegahan yang diperlukan. (Edit)",
+        "Lokasi": "Surabaya"
+    }
+}
+

@@ -1,0 +1,16 @@
+{
+    "Agenda1": {
+        "title": "Rapat Koordinasi Bulanan",
+        "waktumulai": "13.05",
+        "waktuselesai": "14.00",
+        "location": "Ruang Rapat Utama",
+        "description": "Rapat koordinasi bulanan untuk membahas progres proyek dan rencana kerja selanjutnya."
+    },
+    "Agenda2": {
+        "title": "Workshop Pengembangan SDM",
+        "waktumulai": "14.05",
+        "waktuselesai": "15.00",
+        "location": "Aula Serbaguna",
+        "description": "Workshop untuk meningkatkan keterampilan dan pengetahuan karyawan dalam pengembangan sumber daya manusia."
+    }
+}
