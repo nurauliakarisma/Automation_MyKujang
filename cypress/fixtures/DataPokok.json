@@ -1,0 +1,32 @@
+{
+    "TambahDataPokok1" : {
+        "FotoDepan": "Depan.png",
+        "FotoKanan": "Kanan.png",
+        "FotoKiri": "Kiri.png",
+        "FotoBelakang": "Belakang.png",
+        "NamaLengkap": "Anindita Permata",
+        "NRP": "086575429870",
+        "NIK": "036512346789345", 
+        "Pangkat": "BRIGJEN TNI",
+        "TMTPangkat": "2027-09-12",
+        "Korps": "INF",
+        "Spesialisasi": "Raider",
+        "Kualifikasi": "Taipur",
+        "Jabatan": "Kasipers",
+        "TMTJabatan": "2027-09-12",
+        "Satuan": "MABRIG",
+        "TempatLahir": "Jakarta Pusat",
+        "TanggalLahir": "1990-05-15",
+        "Agama": "Budha",
+        "JenisKelamin": "Perempuan",
+        "statusPerkawinan": "Menikah",
+        "Alamat": "Jakarta Pusat, Kebon Kacang.",
+        "NoHp": "084523546780",
+        "KategoriPersonel": "Aktif",
+        "TMTKategoriPersonel": "2027-09-12",
+        "SumberPerwira": "AKADEMI TNI",
+        "TMTPerwira": "2027-09-12",
+        "SumberTNI": "AKADEMI TNI",
+        "TMTSumberTNI": "2027-09-12"
+    }
+}

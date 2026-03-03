@@ -1,12 +1,9 @@
 class MenuPersonel {
 
     //Personel Menu
-    static Personel(){
-        cy.contains('Personel').should('be.visible').click();
-    }
 
     static DataPokok(){
-        cy.contains('Data Pokok').should('be.visible').click();
+        cy.contains('div', 'Data Pokok').first().should('be.visible').click();
     }
 
     static Jabatan(){
@@ -71,8 +68,8 @@ class MenuPersonel {
         cy.url().should('include', '/admin/portal?module=personel');
     }
 
-    static AssertDataPokok(){
-        cy.contains('Data Pokok').should('be.visible');
+    static AssertDataPokokSuccess(){
+        cy.url().should('include', '/admin/personel/dapok');
     }
 
     static AssertJabatan(){
@@ -132,4 +129,5 @@ class MenuPersonel {
     }
     
 }
-export default new MenuPersonel();
+
+export default MenuPersonel;
