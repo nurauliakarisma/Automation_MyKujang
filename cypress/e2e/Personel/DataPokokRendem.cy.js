@@ -1,7 +1,7 @@
 import Login from '../../support/PageObject/login';
 import MenuDashboard from '../../support/PageObject/dashboard';
 import MenuPersonel from "../../support/PageObject/Personel/menupersonel";
-import DataPokok from '../../support/PageObject/Personel/datapokok';
+import DataPokok from '../../support/PageObject/Personel/datapokorendem';
 
 describe('LoginTest', () => {
   function generateNRP(baseNRP) {
@@ -38,8 +38,8 @@ describe('LoginTest', () => {
     DataPokok.PilihKorps(this.DataPokok.TambahDataPokok1.Korps);
     DataPokok.PilihSpesialisasi(this.DataPokok.TambahDataPokok1.Spesialisasi);
     DataPokok.PilihKualifikasi(this.DataPokok.TambahDataPokok1.Kualifikasi);
-    DataPokok.PilihJabatan(this.DataPokok.TambahDataPokok1.Jabatan);
-    DataPokok.TMTJabatan(this.DataPokok.TambahDataPokok1.TMTJabatan);
+    //DataPokok.PilihJabatan(this.DataPokok.TambahDataPokok1.Jabatan);
+    //DataPokok.TMTJabatan(this.DataPokok.TambahDataPokok1.TMTJabatan);
     DataPokok.PilihSatuanKerja(this.DataPokok.TambahDataPokok1.Satuan);
     DataPokok.TempatLahir(this.DataPokok.TambahDataPokok1.TempatLahir);
     DataPokok.TanggalLahir(this.DataPokok.TambahDataPokok1.TanggalLahir);

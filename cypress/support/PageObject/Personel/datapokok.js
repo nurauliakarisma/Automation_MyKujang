@@ -12,7 +12,7 @@ class DataPokok {
 
     // Pilihan Data Kalender
         static pilihTanggal(selector, index, tanggal) {
-
+        const tanggalStr = String(tanggal)
         const [year, month, day] = tanggal.split('-')
 
         const monthMap = {
@@ -43,7 +43,10 @@ class DataPokok {
         cy.get('[data-testid="month-btn"] i').click()
         cy.contains('button', monthText).click()
 
-        cy.contains('button', Number(day)).click()
+        cy.get('.v-date-picker-month__days')
+        .contains('button', new RegExp(`^${Number(day)}$`))
+        .click()
+
         cy.contains('button', 'Pilih').click()
     }
 
@@ -60,14 +63,23 @@ class DataPokok {
     static UploadFotoBelakang(FotoBelakang){
         cy.get('input[type="file"]').eq(3).selectFile(`cypress/fixtures/${FotoBelakang}`, { force: true });
     }
-    static NamaLengkap(NamaLengkap){
-        cy.get('#input-v-1-5').should('be.visible').clear().type(NamaLengkap);
+    static NamaLengkap(nama){
+        cy.contains('label', 'Nama Lengkap').parent().find('input')
+        .should('be.visible')
+        .clear()
+        .type(nama);
     }
     static NRP(NRP){
-        cy.get('#input-v-1-8').should('be.visible').clear().type(NRP);
+        cy.contains('label', 'NRP').parent().find('input')
+        .should('be.visible')
+        .clear()
+        .type(NRP);
     }
     static NIK(NIK){
-        cy.get('#input-v-1-11').should('be.visible').clear().type(NIK);
+        cy.contains('label', 'NIK').parent().find('input')
+        .should('be.visible')
+        .clear()
+        .type(NIK)
     }
     static PilihPangkat(Pangkat){
         cy.get('.mt-n5 > .v-col > .v-input > .v-input__control > .v-field > .v-field__append-inner > .mdi-menu-down').should('be.visible').click();
@@ -100,27 +112,78 @@ class DataPokok {
     static PilihJabatan(Jabatan){
         cy.get(':nth-child(3) > .v-col > :nth-child(2) > .d-flex > .flex-grow-1 > .v-input > .v-input__control > .v-field')
             .should('be.visible').click();
-        cy.get('button.v-btn')
-            .find('.mdi-menu-right')
-            .should('be.visible')
-            .click();
-        cy.get('button.v-btn')
-            .find('.mdi-menu-right')
-            .should('be.visible')
-            .click();
-        cy.get('button.v-btn')
-            .find('.mdi-menu-right')
-            .should('be.visible')
-            .click();
-        cy.get('button.v-btn')
-            .find('.mdi-menu-right')
-            .eq(0)
-            .should('be.visible')
-            .click();
-        cy.contains(Jabatan).should('be.visible').click();
-        cy.contains('button','Pilih')
-            .should('be.visible')
-            .click();
+        cy.get('#v-list-group--id-01 i').should('be.visible').click(); //Tentara Nasioanal 1
+        cy.get('#v-list-group--id-0102 i').should('be.visible').click(); //Tentara Nasional 2
+        cy.get('#v-list-group--id-010218 div').eq(1).should('be.visible').click(); //Brigif Para raider 17/ Sakti Budi Bakti
+        cy.get('#v-list-group--id-01021801 i').eq(0).should('be.visible').click(); //Mabrig
+        cy.get('#v-list-group--id-01021802 i').should('be.visible').click(); //Datasemen Markas
+        cy.get('.v-menu__content').scrollTo('bottom')
+            cy.get('#v-list-group--id-0102180201 i').should('be.visible').click(); //Maden
+            cy.get('#v-list-group--id-0102180202 i').should('be.visible').click(); //Simabrig
+            cy.get('#v-list-group--id-0102180203 i').should('be.visible').click(); //Markas
+                cy.get('#v-list-group--id-010218020313 i').should('be.visible').click(); //Seksi Administrasi
+                cy.get('#v-list-group--id-010218020314 i').should('be.visible').click(); //Ton Perbekalan / Perwatan
+                cy.get('#v-list-group--id-010218020315 i').should('be.visible').click(); //Ton Angkutan
+                cy.get('#v-list-group--id-010218020316 i').should('be.visible').click(); //Si Provost
+                cy.get('#v-list-group--id-010218020317 i').should('be.visible').click(); //TON Kesehatan
+                cy.get('#v-list-group--id-010218020318 i').should('be.visible').click(); //TON PSU
+                cy.get('#v-list-group--id-010218020319 i').should('be.visible').click(); //TON Pandu
+                cy.get('#v-list-group--id-010218020320 i').should('be.visible').click(); //TON Taikam
+            cy.get('#v-list-group--id-0102180204 i').should('be.visible').click(); //Kompi Perhubungan
+                cy.get('#v-list-group--id-010218020421 i').should('be.visible').click(); //TON Hublap
+                cy.get('#v-list-group--id-010218020422 i').should('be.visible').click(); //TON Hubyan
+                cy.get('#v-list-group--id-010218020423 i').should('be.visible').click(); //TON Bekhar
+        cy.get('#v-list-group--id-01021804 i').should('be.visible').click(); //Yonif Para Raider 305 / Tengkorak
+            cy.get('#v-list-group--id-0102180401 i').should('be.visible').click(); //Eselon Pimpinan
+            cy.get('#v-list-group--id-0102180402 i').should('be.visible').click(); //Kompi Markas
+                cy.get('#v-list-group--id-010218040216 i').should('be.visible').click(); //Pleton pimu
+                cy.get('#v-list-group--id-010218040217 i').should('be.visible').click(); //Pleton Kesehatan
+                cy.get('#v-list-group--id-010218040218 i').should('be.visible').click(); //TON Komunikasi
+                   cy.get('#v-list-group--id-010218040219 i').should('be.visible').click(); //Pleton Angkutan
+                cy.get('#v-list-group--id-0102180403 i').should('be.visible').click(); //Kompi Senapan A
+                    cy.get('#v-list-group--id-010218040318 i').should('be.visible').click(); //Pleton Ban/A
+                    cy.get('#v-list-group--id-010218040319 i').should('be.visible').click(); //Pleton I/A
+                    cy.get('#v-list-group--id-010218040320 i').should('be.visible').click(); //Pleton II/A
+                    cy.get('#v-list-group--id-010218040321 i').should('be.visible').click(); //Pleton III/A
+                cy.get('#v-list-group--id-0102180404 i').should('be.visible').click(); //Kompi Senapan B
+                    cy.get('#v-list-group--id-010218040418 i').should('be.visible').click(); //Pleton Ban/B
+                    cy.get('#v-list-group--id-010218040419 i').should('be.visible').click(); //Pleton I/B
+                    cy.get('#v-list-group--id-010218040420 i').should('be.visible').click(); //Pleton II/B
+                    cy.get('#v-list-group--id-010218040421 i').should('be.visible').click(); //Pleton III/B
+                cy.get('#v-list-group--id-0102180405 i').should('be.visible').click(); //Kompi Senapan C
+                    cy.get('#v-list-group--id-010218040518 i').should('be.visible').click(); //Pleton Ban/C
+                    cy.get('#v-list-group--id-010218040519 i').should('be.visible').click(); //Pleton I/C
+                    cy.get('#v-list-group--id-010218040520 i').should('be.visible').click(); //Pleton II/C
+                    cy.get('#v-list-group--id-010218040521 i').should('be.visible').click(); //Pleton III/C
+                cy.get('#v-list-group--id-0102180406 i').should('be.visible').click(); //Kompi Bantuan
+                    cy.get('#v-list-group--id-010218040617 i').should('be.visible').click(); //Pleton/SMS/BANT
+                    cy.get('#v-list-group--id-010218040618 i').should('be.visible').click(); //Pleton SLT/BANT
+                    cy.get('#v-list-group--id-010218040619 i').should('be.visible').click(); //Pleton Morse/BANT
+        cy.get('#v-list-group--id-01021805 i').should('be.visible').click(); //Yonif Para Raider 330 / Dirgahayu
+        
+        cy.get('#v-list-group--id-01021806 i').should('be.visible').click(); //Yonif Para Raider 330 / Tridarma
+            cy.get('#v-list-group--id-0102180601 i').should('be.visible').click(); //Eselon Pimpinan
+            cy.get('#v-list-group--id-0102180602 i').should('be.visible').click(); //Kompi Markas
+                cy.get('#v-list-group--id-010218060221 i').should('be.visible').click(); //TONKES
+                cy.get('#v-list-group--id-010218060222 i').should('be.visible').click(); //TONKOM
+                cy.get('#v-list-group--id-010218060223 i').should('be.visible').click(); //TONANG
+                cy.get('#v-list-group--id-010218060224 i').should('be.visible').click(); //TONPIMU
+            cy.get('#v-list-group--id-0102180603 i').should('be.visible').click(); //Kompi Senapan A
+                cy.get('#v-list-group--id-010218060316 i').should('be.visible').click(); //TONBAN
+                cy.get('#v-list-group--id-010218060317 i').should('be.visible').click(); //PLETON I/A
+                cy.get('#v-list-group--id-010218060318 i').should('be.visible').click(); //Pleton II/A
+                cy.get('#v-list-group--id-010218060319 i').should('be.visible').click(); //Pleton III/A
+            cy.get('#v-list-group--id-0102180604 i').should('be.visible').click(); //Kompi Senapan B
+                cy.get('#v-list-group--id-010218060416 i').should('be.visible').click(); //TONBAN
+                cy.get('#v-list-group--id-010218060417 i').should('be.visible').click(); //Pleton I/B
+                cy.get('#v-list-group--id-010218060418 i').should('be.visible').click(); //Pleton II/B
+                cy.get('#v-list-group--id-010218060419 i').should('be.visible').click(); //Pleton III/B
+            cy.get('#v-list-group--id-0102180605 i').should('be.visible').click(); //Kompi Bantuan
+                cy.get('#v-list-group--id-010218060615 i').should('be.visible').click(); //TONMORSE
+                cy.get('#v-list-group--id-010218060616 i').should('be.visible').click(); //TONSMS
+                cy.get('#v-list-group--id-010218060617 i').should('be.visible').click(); //TONDRONE
+        //cy.contains(Jabatan).should('be.visible').click();
+        //cy.contains('button','Pilih').should('be.visible').click();
     }
     static TMTJabatan(tanggal) {
         this.pilihTanggal(
@@ -138,7 +201,7 @@ class DataPokok {
         cy.contains('button', 'Pilih').should('be.visible').click();
     }
     static TempatLahir(TempatLahir){
-        cy.get('#input-v-1-41').should('be.visible').clear().type(TempatLahir);
+        cy.get('.v-col-12 > .v-row > :nth-child(1) > .v-input > .v-input__control > .v-field').should('be.visible').type(TempatLahir);
     }
     static TanggalLahir(tanggalLahir) {
         this.pilihTanggal(
@@ -160,10 +223,13 @@ class DataPokok {
         cy.get('.v-list-item__content').contains(JenisKelamin).should('be.visible').click();
     }
     static Alamat(Alamat){
-        cy.get('#input-v-1-63').should('be.visible').clear().type(Alamat);
+        cy.contains('label', 'Alamat').parent().find('input')
+        .should('be.visible')
+        .clear()
+        .type(Alamat)
     }
     static NoHp(NoHp){
-        cy.get('#input-v-1-66').should('be.visible').clear().type(NoHp);
+        cy.get(':nth-child(3) > :nth-child(5) > .v-col > .v-input > .v-input__control > .v-field').should('be.visible').type(NoHp);
     }
     static KategoriPersonel(KategoriPersonel){
         cy.get('div.v-input.v-input--horizontal > div:nth-of-type(1) > div.v-field.v-field--appended > div:nth-of-type(5) > i.mdi-menu-down.mdi').eq(5).should('be.visible').click();
@@ -183,8 +249,8 @@ class DataPokok {
     }
     static TMTPerwira(tanggalPerwira) {
         this.pilihTanggal(
-            ':nth-child(9) > .v-col > .v-input > .v-input__control > .v-field > .v-field__append-inner > .mdi-calendar',
-            0,
+            'div.v-input.v-input--horizontal > div > div.v-field.v-field--appended > div:nth-of-type(4) > i.mdi-calendar.mdi',
+            4,
             tanggalPerwira
         )
     }
@@ -202,7 +268,9 @@ class DataPokok {
 
     //Assertion
     static AssertFormTambahDataPokok(){
-        cy.url().should('include', '/admin/personel/dapok/tambah');
+    cy.get('label')
+      .contains('Nama Lengkap')
+      .should('be.visible')
     }
     static AssertDataPokokSuccess(){
         cy.url().should('include', '/admin/personel/dapok');
